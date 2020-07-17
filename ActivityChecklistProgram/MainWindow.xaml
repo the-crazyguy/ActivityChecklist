@@ -6,26 +6,53 @@
         xmlns:local="clr-namespace:ActivityChecklistProgram"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <!--Activity Styling-->
+        <Style x:Key="ActivityStyling" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        
+        <!--Checkbox Styling-->
+        <Style x:Key="CheckboxStyling" TargetType="{x:Type CheckBox}">
+            <Setter Property="Margin" Value="15,15"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <!--Activity Border Styling-->
+        <Style x:Key="ActivityBorderStyling" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="DeepSkyBlue"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-
+        
+        <!--Row 1-->
         <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5"
                Margin="5"
                FontSize="20" FontWeight="SemiBold"
@@ -33,8 +60,89 @@
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"/>
 
-        <DataGrid Grid.Row="2" Grid.Column="1"
-                  Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <!--Row 2-->
+        <!--<Label x:Name="Activity1" Style="{StaticResource ActivityStyling}"
+               Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3"
+               Content="Activity1"/>
+        <CheckBox x:Name="ActivityCheckBox1" Style="{StaticResource CheckboxStyling}"
+                  Grid.Row="2" Grid.Column="3"/>
+        <Border Style="{StaticResource ActivityBorderStyling}"
+                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5"/>-->
+        
+        <!--Row 3-->
+        <!--<Label x:Name="Activity2" Style="{StaticResource ActivityStyling}"
+               Grid.Row="3" Grid.Column="2"
+               Content="Activity2"/>
+        <CheckBox x:Name="ActivityCheckBox2" Style="{StaticResource CheckboxStyling}"
+                  Grid.Row="3" Grid.Column="3"/>-->
+        
+        <!--Row 4-->
+        <!--<Label x:Name="Activity3" Style="{StaticResource ActivityStyling}"
+               Grid.Row="4" Grid.Column="2"
+               Content="Activity3"/>
+        <CheckBox x:Name="ActivityCheckBox3" Style="{StaticResource CheckboxStyling}"
+                  Grid.Row="4" Grid.Column="3"/>-->
+        
+        <!--Row 5-->
+        <!--<Label x:Name="Activity4" Style="{StaticResource ActivityStyling}"
+               Grid.Row="5" Grid.Column="2"
+               Content="Activity4"/>
+        <CheckBox x:Name="ActivityCheckBox4" Style="{StaticResource CheckboxStyling}"
+                  Grid.Row="5" Grid.Column="3"/>-->
+
+
+        <!--Row 2-->
+        <Border Style="{StaticResource ActivityBorderStyling}"
+                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5">
+
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4"
+                        Orientation="Horizontal">
+
+                <Label x:Name="Activity1" Style="{StaticResource ActivityStyling}"
+                       Content="Activity1"/>
+                <CheckBox x:Name="ActivityCheckBox1" Style="{StaticResource CheckboxStyling}"/>
+
+            </StackPanel>
+        </Border>
+        
+        <!--Row 3-->
+        <Border Style="{StaticResource ActivityBorderStyling}"
+                Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
+            <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4"
+                        Orientation="Horizontal">
+
+                <Label x:Name="Activity2" Style="{StaticResource ActivityStyling}"
+                       Content="Activity2"/>
+                <CheckBox x:Name="ActivityCheckBox2" Style="{StaticResource CheckboxStyling}"/>
+
+            </StackPanel>
+        </Border>
+        
+        <!--Row 4-->
+        <Border Style="{StaticResource ActivityBorderStyling}"
+                Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5">
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4"
+                        Orientation="Horizontal">
+
+                <Label x:Name="Activity3" Style="{StaticResource ActivityStyling}"
+                       Content="Activity3"/>
+                <CheckBox x:Name="ActivityCheckBox3" Style="{StaticResource CheckboxStyling}"/>
+
+            </StackPanel>
+        </Border>
+
+        <!--Row 5-->
+        <Border Style="{StaticResource ActivityBorderStyling}"
+                Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4"
+                        Orientation="Horizontal">
+
+                <Label x:Name="Activity4" Style="{StaticResource ActivityStyling}"
+                       Content="Activity4"/>
+                <CheckBox x:Name="ActivityCheckBox4" Style="{StaticResource CheckboxStyling}"/>
+
+            </StackPanel>
+        </Border>
 
     </Grid>
 </Window>

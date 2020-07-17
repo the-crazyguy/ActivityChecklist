@@ -20,10 +20,24 @@ namespace ActivityChecklistProgram
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int ActivitiesCount { get; set; } = 4;
+        public List<string> activities = new List<string> { "Draw", "Go for a walk", "Read up on something", "Talk to a friend" };
+
         public MainWindow()
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            SetActivities();
+        }
+
+        private void SetActivities()
+        {
+            for (int i = 1; i <= ActivitiesCount; i++)
+            {
+                Label currentActivity = (Label)FindName($"Activity{i}");
+                currentActivity.Content = activities[i - 1];
+            }
         }
     }
 }
